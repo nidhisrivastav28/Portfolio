@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Projects- Nidhi Srivastav</title>
+</head>
+
+<body>
+    <!-- HEADER STARTS -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><i class="fa-solid fa-xmark" onclick="closemenu()"></i></li>
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#certificates">CERTIFICATES</a></li>
+                    <li><a href="#mywork">WORKS</a></li>
+                    <li><a href="#contact">CONTACT ME</a></li>
+
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>From Imagination to Execution — I<br> bring Ideas Alive on the Web</p>
+                <h1>I'm <span>Nidhi Srivastav</span></h1>
+            </div>
+        </div>
+    </div>
+    <!-- HEADER ENDS -->
+
+    <!-- ABOUT STARTS -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/nidhi3.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>A passionate and detail-oriented Web Developer from Kolkata, currently pursuing MCA. Skilled in
+                        HTML, CSS, JavaScript, PHP, and MySQL, with a strong interest in building responsive,
+                        user-friendly websites. Always eager to explore new technologies and contribute to impactful
+                        digital solutions.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> HTML,CSS<br>
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> JavaScript<br>
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> Bootstrap<br>
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> PHP & MySQL<br>
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> Python<br>
+                        </ul>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> Industrial Training in
+                            Euphoria GenX<br>
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> College Project -
+                            StudyShala: Your Notes Hub<br>
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> Minor Project - The
+                            Billing App<br>
+                        </ul>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> MCA (Master of Computer
+                            Applications) – RCCIIT
+                            <span style="color:gray">2024 – Present</span><br>
+
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> BCA (Bachelor of Computer
+                            Applications) – SITM
+                            <span style="color:gray">Graduated in 2024</span><br>
+
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> Higher Secondary (Class
+                            12) – WBCHSE Board
+                            <span style="color:gray">Passed in 2021</span><br>
+
+                            <i class="fa-sharp fa-solid fa-check" style="color: #1de619;"></i> Secondary (Class 10) –
+                            WBBSE Board
+                            <span style="color:gray">Passed in 2018</span><br>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ABOUT ENDS -->
+
+    <!-- CERTIFICATE START -->
+    <div id="certificates">
+        <div class="container">
+            <h1 class="sub-title">Certificates</h1>
+
+            <div class="slider-wrapper">
+                <button class="prev">&#10094;</button>
+
+                <div class="services-list" id="slider-cert">
+
+                    <div>
+                        <h3>Course on Java</h3>
+                        <img src="images/infosys_virtual_intership_course.jpg">
+                    </div>
+                    <div>
+                        <h3>Training on Mobile & Web Technology</h3>
+                        <img src="images/RCCIIT_merit_course.jpeg">
+                    </div>
+                    <div>
+                        <h3>Internship at Euphoria GenX</h3>
+                        <img src="images/Internship.jpeg">
+                    </div>
+                    <div>
+                        <h3>Industrial Training at Euphoria GenX</h3>
+                        <img src="images/Industrial_Training.jpeg">
+                    </div>
+                    <div>
+                        <h3>Training on <br>Data Analytics</h3>
+                        <img src="images/Anudip_Foundation.jpeg">
+                    </div>
+
+
+                </div>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+    <!-- CERTIFICATE ENDS -->
+
+    <!-- MY WORK STARTS -->
+    <div id="mywork">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('web')">Web Projects</p>
+                <p class="tab-links" onclick="opentab('android')">Android Projects</p>
+            </div>
+            <div class="slider-wrapper">
+                <button class="prev-project">&#10094;</button>
+                <!-- WEB PROJECTS -->
+                <div class="tab-contents active-tab" id="web">
+                    <div class="work-list" id="slider-web">
+                        <!-- Project 1 -->
+                        <div class="work ">
+                            <img src="images/studyshala1.png">
+                            <div class="layer">
+                                <h3>StudyShala - <br>Your Notes Hub</h3>
+                                <!-- Description of the project</p> -->
+                                <p>StudyShala is a user-friendly web application that enables students to upload, share,
+                                    and access study notes seamlessly. </p>
+                                <a href="https://github.com/nidhisrivastav28/StudyShala---Your-Notes-Hub"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="work ">
+                            <img src="images/festivopedia1.JPG">
+                            <div class="layer">
+                                <h3>FESTIVOPEDIA</h3>
+                                <!-- Description of the project -->
+                                <p>It is an informative website that showcases the rich diversity of Indian festivals
+                                    across different states and religions.</p>
+                                <a href="https://github.com/nidhisrivastav28/Festivopedia"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="work ">
+                            <img src="images/sgc1.png">
+                            <div class="layer">
+                                <h3>Student Grade Calculator<br></h3>
+                                <!-- Description of the project -->
+                                <p>SGC is a lightweight web application that helps students calculate their final grades
+                                    based on inputted marks</p>
+                                <a href="https://github.com/nidhisrivastav28/Student-Grade-Calculator"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <!-- Project 4 -->
+                        <div class="work ">
+                            <img src="images/rating.png">
+                            <div class="layer">
+                                <h3>Rating System<br></h3>
+                                <!-- Description of the project -->
+                                <p>It is a customizable front-end based feature that allows users to submit and view
+                                    ratings for content or services. </p>
+                                <a href="https://github.com/nidhisrivastav28/Rating-System"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ANDROID PROJECTS -->
+                <div class="tab-contents" id="android">
+                    <div class="work-list" id="slider-android">
+                        <!-- Project 1 -->
+                        <div class="work ">
+                            <img src="images/weather1.png">
+                            <div class="layer">
+                                <h3>Weather App</h3>
+                                <!-- Description of the project -->
+                                <p>A simple and interactive Android application to check real-time weather updates.</p>
+                                <a href="https://github.com/nidhisrivastav28/Weather-App"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <!-- <div class="work ">
+                                <img src="images/studyshala1.png">
+                                <div class="layer">
+                                    <h3>StudyShala - <br>Your Notes Hub</h3>
+                                    <p>Description of the project</p>
+                                    <a href="https://github.com/nidhisrivastav28/StudyShala---Your-Notes-Hub"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div> -->
+                        <!-- Project 3 -->
+                        <!-- <div class="work ">
+                                <img src="images/studyshala1.png">
+                                <div class="layer">
+                                    <h3>FESTIVOPEDIA - <br>Your Notes Hub</h3>
+                                    <p>Description of the project</p>
+                                    <a href="https://github.com/nidhisrivastav28/StudyShala---Your-Notes-Hub"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div> -->
+                    </div>
+                    <!-- Project 4 -->
+                    <!-- <div class="work ">
+                                <img src="images/studyshala1.png">
+                                <div class="layer">
+                                    <h3>StudyShala - <br>Your Notes Hub</h3>
+                                    <p>Description of the project</p>
+                                    <a href="https://github.com/nidhisrivastav28/StudyShala---Your-Notes-Hub"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div> -->
+                </div>
+                <button class="next-project">&#10095;</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <a href="#" class="btn">See More</a>
+    </div>
+    <!-- MY WORK ENDS -->
+
+    <!-- CONTACT STARTS -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>nidhisrivastav283@gmail.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i>Kolkata, India</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/shikha.srivastav.7399"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/nidhisrivastav.28/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/nidhisrivastav28"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/nidhi-srivastav-4aa298262/"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/NIDHI_SRIVASTAV.pdf" download class="btn btn2">Download CV</a>
+                </div>
+
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Enter Your Name" required>
+                        <input type="email" name="Email" placeholder="Enter Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Enter your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright @Nidhi <br> Made with <i class="fas fa-heart"></i></p>
+        </div>
+
+    </div>
+    <!-- CONTACT ENDS -->
+    <!-- FOOTER -->
+
+
+    <!-- CERTIFICATES -->
+
+    <!-- BODY ENDS -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- INTERNAL JAVASCRIPT -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

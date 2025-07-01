@@ -1,0 +1,460 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #080808;
+    color: #fff;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/nidhi1.png);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding: 10px 5%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap ;
+}
+.logo{
+    width: 140px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none; 
+    margin: 10px 10px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+.header-text{
+    /* color: #fff; */
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text p{
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    background: linear-gradient(to right, #fc72ff, #8f68ff, #487bff , #8f68ff, #fc72ff);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+@keyframes animate-gradient {
+    to{
+        background-position: 200%;
+    }
+}
+
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+    display: inline;
+    /* font-family: monospace; */
+}
+.header-text h1 span{
+    color: #FF1493;
+    font-style: italic;
+    white-space: nowrap;
+    font-family: monospace;
+    border-right: 5px solid;
+    display: inline-block;
+    /* width: 0; */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(15) forwards ,cursor .4s step-end infinite alternate;
+    line-height: 1;
+    /* overflow: hidden;
+    border-right: 2px solid #FF1493;
+    width: 0;
+    display: inline-block;
+    animation: typing 3s steps(16) forwards, blink 1s step-end infinity;
+    font-family: monospace; */
+}
+@keyframes cursor {
+    50%{
+        border-color: transparent;
+    }
+} 
+ @keyframes typing {
+    from{
+        width: 0;
+    }
+    to{
+        width: 15ch;
+    }
+}
+
+/*ABOUT*/
+#about{
+    padding: 80px 0;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.8s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul{
+    margin-top: -20px;
+    margin-left: -20px;
+}
+.tab-contents ul i{
+    color: #b54769;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+/*about me ka bg color white*/
+
+/*CERTIFICATES*/
+#certificates{
+    padding: 30px 0;
+}
+.slider-wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.services-list{
+    display: flex;
+    /* transition: transform 0.5s ease-in-out; */
+    /* grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); */
+    flex-wrap: nowrap;
+    gap: 40px;
+    margin-top: 50px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+}
+.services-list div{
+    flex: 0 0 350px;
+    background: #262626;
+    padding: 25px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+    
+}
+.services-list img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+
+}
+.services-list h3{
+    text-align: center;
+}
+.prev, .next, .prev-project, .next-project{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+}
+.prev, .prev-project{
+    left: 0;
+}
+.next, .next-project{
+    right: 0;
+}
+
+.services-list div:hover{
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+.services-list h3{
+    text-align: center;
+}
+/*MY WORKS*/
+#mywork{
+    padding: 30px 0;
+}
+.work-list{
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+}
+.work{
+    border-radius: 10px;
+    flex: 0 0 350px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    flex: 1;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+
+/*CONTACT ME*/
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration:none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    margin-top: 30px;
+    display: inline-block;
+    background: #ff004f;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 40px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+.copyright i{
+    color: #ff004f;
+}
+
+nav .fa-solid{
+    display: none;
+}
+
+/*CSS for RESPONSIVE*/
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(images/nidhi1_phn.png);
+    }
+    .header-text{
+        margin-top: 40%;
+        margin-left: 10%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        left: 25px;
+        cursor: pointer,
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+        padding: 10px;
+    }
+    .work-list{
+        grid-template-columns: 1fr;
+    }
+}
+
+#msg{
+    color: #61b752;
+    margin-top: 10px;
+    display: block;
+}
