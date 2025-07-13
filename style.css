@@ -115,6 +115,9 @@ nav ul li a:hover::after{
         width: 15ch;
     }
 }
+#intro-section{
+    padding: 80px 0;
+}
 
 /*ABOUT*/
 #about{
@@ -391,12 +394,20 @@ nav .fa-solid{
 /*CSS for RESPONSIVE*/
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/nidhi1_phn.png);
+        background-image: url(images/nidhi_new.jpeg);
+        background-size: cover;
+        background-position: center; 
+        height: auto;
+        margin-bottom: -25%;
     }
     .header-text{
-        margin-top: 40%;
-        margin-left: 10%;
+        margin-top: 120%;
+        padding: 100px 10% 10%;
         font-size: 16px;
+        text-align: center;
+/*         
+        /*margin-left: 10%;
+        font-size: 16px; */
     }
     .header-text h1{
         font-size: 30px;
