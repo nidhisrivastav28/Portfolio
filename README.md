@@ -33,7 +33,7 @@ This is the source code of my **Portfolio Website**, where I showcase my project
 ![About Section](./images/readme_about.png)
 
 ### Projects Section  
-![Projects Screenshot](./images/readme_projects.png)
+![Projects Screenshot](./images/readme_project.png)
 
 ---
 
