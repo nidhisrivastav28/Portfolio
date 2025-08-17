@@ -3,11 +3,11 @@ var a_tablinks = document.getElementsByClassName("tab-links");
 var a_tabcontents = document.getElementsByClassName("tab-contents");
 
 function opentab(a_tabname){
-	for(a_tablink of a_tablinks){
-		a_tablink.classList.remove("active-link");
+	for(a_tablinks of a_tablinks){
+		a_tablinks.classList.remove("active-link");
 	}
-	for(a_tabcontent of a_tabcontents){
-		a_tabcontent.classList.remove("active-tab");
+	for(a_tabcontents of a_tabcontents){
+		a_tabcontents.classList.remove("active-tab");
 	}
 	event.currentTarget.classList.add("active-link");
 	document.getElementById(a_tabname).classList.add("active-tab");
@@ -83,11 +83,11 @@ var w_tablinks = document.getElementsByClassName("tab-links");
 var w_tabcontents = document.getElementsByClassName("tab-contents");
 
 function opentab(w_tabname){
-	for(w_tablink of w_tablinks){
-		w_tablink.classList.remove("active-link");
+	for(w_tablinks of w_tablinks){
+		w_tablinks.classList.remove("active-link");
 	}
-	for(w_tabcontent of w_tabcontents){
-		w_tabcontent.classList.remove("active-tab");
+	for(w_tabcontents of w_tabcontents){
+		w_tabcontents.classList.remove("active-tab");
 	}
 	event.currentTarget.classList.add("active-link");
 	document.getElementById(w_tabname).classList.add("active-tab");
