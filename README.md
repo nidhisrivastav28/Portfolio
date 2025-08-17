@@ -30,10 +30,10 @@ This is the source code of my **Portfolio Website**, where I showcase my project
 
 ## 📸 Screenshots
 ### About Section  
-![About Section](./images/about.png)
+![About Section](./images/readme_about.png)
 
 ### Projects Section  
-![Projects Screenshot](./images/projects.png)
+![Projects Screenshot](./images/readme_projects.png)
 
 ---
 
