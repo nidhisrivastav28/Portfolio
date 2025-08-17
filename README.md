@@ -29,8 +29,8 @@ This is the source code of my **Portfolio Website**, where I showcase my project
 ---
 
 ## 📸 Screenshots
-### Home Page  
-![Home Screenshot](./images/home.png)
+### About Section  
+![About Section](./images/about.png)
 
 ### Projects Section  
 ![Projects Screenshot](./images/projects.png)
