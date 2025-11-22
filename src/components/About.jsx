@@ -1,4 +1,4 @@
-import { FaPaintBrush, FaMusic, FaFootballBall, FaGamepad, FaBook, FaCode } from "react-icons/fa";
+import { FaPaintBrush, FaMusic, FaFootballBall, GiDancer, FaBook, FaCode } from "react-icons/fa";
 
 export default function About() {
     return (
@@ -40,8 +40,8 @@ export default function About() {
                         <span className="text-sm font-medium">Sports</span>
                     </div>
                     <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg gap-4 hover:text-red-400 hover:scale-110 transition-all duration-300 cursor-pointer">
-                        <FaGamepad />
-                        <span className="text-sm font-medium">Gaming</span>
+                        <GiDancer />
+                        <span className="text-sm font-medium">Dancing</span>
                     </div>
                     <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg gap-4 hover:text-red-400 hover:scale-110 transition-all duration-300 cursor-pointer">
                         <FaBook />
