@@ -1,4 +1,5 @@
-import { FaPaintBrush, FaMusic, FaFootballBall, FaGamepad, FaBook, FaCode } from "react-icons/fa";
+import { FaPaintBrush, FaMusic, FaFootballBall, FaBook, FaCode } from "react-icons/fa";
+import { GiBodyBalance } from "react-icons/gi";
 
 export default function About() {
     return (
@@ -22,7 +23,7 @@ export default function About() {
                         I aim to build impactful projects that solve real-world problems.
                     </p>
 
-                    
+
                 </div>
 
                 {/* Right Interests / Icons */}
@@ -40,8 +41,8 @@ export default function About() {
                         <span className="text-sm font-medium">Sports</span>
                     </div>
                     <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg gap-4 hover:text-red-400 hover:scale-110 transition-all duration-300 cursor-pointer">
-                        <FaGamepad />
-                        <span className="text-sm font-medium">Gaming</span>
+                        <GiBodyBalance />
+                        <span className="text-sm font-medium">Dancing</span>
                     </div>
                     <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg gap-4 hover:text-red-400 hover:scale-110 transition-all duration-300 cursor-pointer">
                         <FaBook />
@@ -52,12 +53,12 @@ export default function About() {
                         <span className="text-sm font-medium">Coding</span>
                     </div>
                 </div>
-                
+
 
             </div>
             <a href="#skills" className="mt-6 ml-30 bg-black text-white px-7 py-3 rounded-lg font-medium hover:scale-105 hover:text-red-300 hover:cursor-pointer transition inline-block">
-                        Know More
-                    </a>
+                Know More
+            </a>
         </section>
     );
 }
