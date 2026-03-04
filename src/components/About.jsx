@@ -19,7 +19,7 @@ export default function About() {
                     </p>
 
                     <p className="mt-4 text-gray-700 leading-relaxed text-lg">
-                        With a strong foundation in HTML, CSS, JavaScript, React, Java, Springboot, PHP and MySQL,
+                        With a strong foundation in HTML, CSS, JavaScript, React, Java, Springboot, PHP, Python, Flask and MySQL,
                         I aim to build impactful projects that solve real-world problems.
                     </p>
 

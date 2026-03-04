@@ -8,9 +8,21 @@ import hangouthub2 from '../assets/hangouthub2.png';
 import hangouthub3 from '../assets/hangouthub3.png';
 import hangouthub4 from '../assets/hangouthub4.png';
 import hangouthub5 from '../assets/hangouthub5.png';
+import sentimentAnalysis1 from '../assets/sentimentAnalysis1.png';
+import sentimentAnalysis2 from '../assets/sentimentAnalysis2.png';
+import sentimentAnalysis3 from '../assets/sentimentAnalysis3.png';
 import patientadmission1 from '../assets/patientadmissionSystem.png';
+import { MdSentimentNeutral } from "react-icons/md";
 
 const projects = [
+    {
+        name: "Sentiment Analysis",
+        description: "An AI-powered mood-based hangout recommendation system that suggests budget-friendly places based on user sentiment and location. Built with Spring Boot backend, MySQL database, and a responsive frontend UI.",
+        tech: [""],
+        link: "/portfolio/public/sentimentAnalysis/Sentiment_Analysis.pdf",
+        images: [sentimentAnalysis1,sentimentAnalysis2,sentimentAnalysis3],
+        liveDemo: "", 
+    },
     {
         name: "HangOutHub",
         description: "A user-friendly Spring Boot web app to discover budget-friendly hangout spots based on mood and location, with a responsive UI, MySQL backend, and AI-powered interactive assistance.",

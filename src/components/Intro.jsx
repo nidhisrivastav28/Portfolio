@@ -12,7 +12,7 @@ export default function Intro() {
           </h1>
 
           <p className="mt-3 text-lg text-gray-700 leading-relaxed">
-            Creative Web Developer | Frontend & Backend Enthusiast
+            Data Analyst | Full-Stack Developer | AI Enthusiast
           </p>
 
           <div className="flex flex-wrap gap-4 mt-6">
@@ -23,7 +23,7 @@ export default function Intro() {
               View my Work
             </a>
             <a
-              href="/resume/NidhiSrivastav_CV.pdf"
+              href="/Portfolio/resume/NidhiSrivastav_CV.pdf"
               target='_blank'
               className="bg-black text-white px-6 py-3 rounded-lg text-sm font-semibold hover:scale-105 hover:text-red-300 hover:cursor-pointer transition inline-block"
             >
