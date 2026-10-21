@@ -1,97 +1,237 @@
 import { useState } from "react";
-import { Menu, X, Linkedin, Github } from "lucide-react";
+import {
+  Menu,
+  X,
+  Moon,
+  ChevronDown,
+  Linkedin,
+  Github,
+} from "lucide-react";
+
 import leetcode from "../assets/leetcode.png";
+
+const navItems = [
+  { name: "Home", link: "#home" },
+  { name: "About", link: "#about" },
+  { name: "Skills", link: "#skills" },
+  { name: "Projects", link: "#projects" },
+  { name: "Contact", link: "#contact" },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [themeMenu, setThemeMenu] = useState(false);
 
   return (
-    <nav className="w-full sticky top-0 z-50 bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+    <>
+      {/* NAVBAR */}
 
-        {/* Logo / Name */}
-        <h1 className="text-3xl font-semibold tracking-wide text-gray-800">
-          Nidhi Srivastav
-        </h1>
+      <nav className="sticky top-0 z-50 bg-[#050816]/95 backdrop-blur-md border-b border-slate-800">
+        <div className="max-w-7xl mx-auto h-20 px-8 grid grid-cols-3 items-center">
 
-        {/* Desktop Menu Links */}
-        <ul className="hidden md:flex gap-8 text-gray-600 font-medium">
-          <li className="hover:text-black transition cursor-pointer"><a href="#home">Home</a></li>
-          <li className="hover:text-black transition cursor-pointer"><a href="#about">About</a></li>
-          <li className="hover:text-black transition cursor-pointer"><a href="#skills">Skills</a></li>
-          <li className="hover:text-black transition cursor-pointer"><a href="#projects">Projects</a></li>
-          <li className="hover:text-black transition cursor-pointer"><a href="#contact">Contact</a></li>
-        </ul>
+          {/* Brand */}
 
-        {/* Mobile Menu Icon */}
-        <button className="md:hidden text-gray-700 cursor-pointer" onClick={() => setOpen(!open)}>
-          {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
-
-        {/* Mobile Menu Links */}
-
-        {open && (
-          <div
-            onClick={() => setOpen(false)}
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
-          ></div>
-        )}
-
-        {/* MOBILE SLIDE OVER MENU (Right side) */}
-        <div
-          className={`fixed inset-y-0 right-0 z-50 w-80 bg-white shadow-xl p-6 transform transition-transform duration-300
-        ${open ? "translate-x-0" : "translate-x-full"}`}
-        >
-          {/* HEADER */}
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold">Menu</h2>
-
-            <button onClick={() => setOpen(false)} className="text-gray-700">
-              <X size={26} />
-            </button>
+          <div>
+            <h1 className="text-4xl font-bold italic text-violet-500 cursor-pointer select-none">
+              Nidhi
+            </h1>
           </div>
 
-          {/* LINKS */}
-          <div className="mt-8 space-y-4 text-gray-900 font-medium">
-            <a href="#home" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
-            <a href="#about" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-lg hover:bg-gray-100">About</a>
-            <a href="#skills" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-lg hover:bg-gray-100">Skills</a>
-            <a href="#projects" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-lg hover:bg-gray-100">Projects</a>
-            <a href="#contact" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
-          </div>
+          {/* Desktop Navigation */}
 
-          {/* FOOTER */}
-          <div className="flex gap-4 px-3 py-2 text-gray-700">
-            <a href="https://www.linkedin.com/in/nidhi-srivastav-4aa298262/" target="_blank" className="relative group cursor-pointer hover:text-red-300 transition">
-              <Linkedin size={24} />
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 
-                   bg-black text-white text-xs px-2 py-1 rounded opacity-0 
-                   group-hover:opacity-100 transition">
-                LinkedIn
-              </span>
-            </a>
+          <ul className="hidden md:flex justify-center items-center gap-10">
 
-            <a href="https://github.com/nidhisrivastav28/" target="_blank" className="relative group cursor-pointer hover:text-red-300 transition">
-              <Github size={24} />
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 
-                   bg-black text-white text-xs px-2 py-1 rounded opacity-0 
-                   group-hover:opacity-100 transition">
-                GitHub
-              </span>
-            </a>
+            {navItems.map((item, index) => (
 
-            <a href="https://leetcode.com/u/nidhi_28/" target="_blank" className="relative group">
-              <img src={leetcode} alt="leetcode" className="w-6 h-6 hover:text-red-300 transition" />
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 
-                   bg-black text-white text-xs px-2 py-1 rounded opacity-0 
-                   group-hover:opacity-100 transition">
-                LeetCode
-              </span>
-            </a>
-          </div>
+              <li key={item.name} className="relative group">
+                <a href={item.link}
+                  className="text-gray-300 hover:text-violet-400 transition-colors duration-300 text-sm font-medium"
+                >{item.name}
+                </a>
+
+                {/* Active Underline */}
+
+                <span
+                  className={`absolute left-0 -bottom-2 h-[2px] bg-violet-500 transition-all duration-300
+                  
+                  ${index === 0
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"
+                    }
+                  
+                  `}
+                ></span>
+
+              </li>
+
+            ))}
+
+          </ul>
+
+          {/* Right Side */}
+
+          
+
+          {themeMenu && (
+
+            <div className="absolute top-16 right-0 w-44 rounded-xl bg-[#111827] border border-slate-700 shadow-xl overflow-hidden">
+
+              <button className="w-full px-4 py-3 text-left hover:bg-slate-800 text-gray-300">
+                🌙 Dark
+              </button>
+
+              <button className="w-full px-4 py-3 text-left hover:bg-slate-800 text-gray-300">
+                ☀️ Light
+              </button>
+            </div>
+          )}
+          {/* Mobile Menu Button */}
+
+          <button
+            onClick={() => setOpen(true)}
+            className="md:hidden flex justify-end text-white"
+          >
+            <Menu size={30} />
+          </button>
 
         </div>
+      </nav>
+
+      {/* Overlay */}
+
+      {open && (
+
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+        />
+
+      )}
+
+      {/* Mobile Drawer */}
+
+      <div
+        className={`
+        fixed
+        top-0
+        right-0
+        h-screen
+        w-80
+        bg-[#050816]
+        z-50
+        shadow-2xl
+        p-6
+        transition-transform
+        duration-300
+        
+        ${open
+            ? "translate-x-0"
+            : "translate-x-full"
+          }
+        `}
+      >
+
+        {/* Header */}
+
+        <div className="flex justify-between items-center">
+
+          <div>
+
+            <h2 className="text-2xl font-bold text-violet-500">
+              Nidhi.
+            </h2>
+
+            {/* <p className="text-sm text-gray-400 mt-1">
+              Data Analyst | Developer
+            </p> */}
+
+          </div>
+
+          <button
+            onClick={() => setOpen(false)}
+          >
+
+            <X
+              size={28}
+              className="text-white"
+            />
+
+          </button>
+
+        </div>
+
+        {/* Navigation */}
+
+        <div className="mt-12 flex flex-col gap-5">
+
+          {navItems.map((item) => (
+
+            <a
+              key={item.name}
+              href={item.link}
+              onClick={() => setOpen(false)}
+              className="
+              rounded-xl
+              px-4
+              py-3
+              text-gray-300
+              hover:bg-violet-600/20
+              hover:text-violet-400
+              transition
+              "
+            >
+
+              {item.name}
+
+            </a>
+
+          ))}
+
+        </div>
+
+        {/* Social Icons */}
+
+        <div className="absolute bottom-8 left-6 flex gap-5">
+
+          <a
+            href="https://www.linkedin.com/in/nidhi-srivastav-4aa298262/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-gray-400 hover:text-violet-400 transition"
+          >
+
+            <Linkedin size={22} />
+
+          </a>
+
+          <a
+            href="https://github.com/nidhisrivastav28"
+            target="_blank"
+            rel="noreferrer"
+            className="text-gray-400 hover:text-violet-400 transition"
+          >
+
+            <Github size={22} />
+
+          </a>
+
+          <a
+            href="https://leetcode.com/u/nidhi_28/"
+            target="_blank"
+            rel="noreferrer"
+          >
+
+            <img
+              src={leetcode}
+              alt="LeetCode"
+              className="w-6 h-6 opacity-70 hover:opacity-100 transition"
+            />
+
+          </a>
+
+        </div>
+
       </div>
-    </nav>
+    </>
   );
 }

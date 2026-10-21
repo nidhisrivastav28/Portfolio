@@ -1,94 +1,312 @@
-import { useState, useEffect, useRef } from "react";
-import cert1 from '../assets/cert4.png';
-import cert2 from '../assets/cert3.png';
-import cert3 from '../assets/cert2.png';
-import cert4 from '../assets/cert1.png';
+import {
+  Award,
+  ExternalLink,
+  ArrowRight,
+  Mail,
+  MapPin,
+  Linkedin,
+  MessageCircle,
+} from "lucide-react";
+import { useState, useEffect } from "react";
+
 
 const certificates = [
-  { name: "Mobile & Web Technology — RCCIIT", image: cert1 },
-  { name: "Programming using Java — Infosys-Springboard", image: cert2 },
-  { name: "Industrial Training — Euphoria GenX", image: cert3 },
-  { name: "Data Analytics (No/Low Code) — Anudip Foundation", image: cert4 },
+  {
+    title: "Google Data Analytics",
+    provider: "Google",
+    type: "Professional Certificate",
+    link: "#",
+    color: "text-blue-400",
+  },
+  {
+    title: "Microsoft Power BI",
+    provider: "Microsoft",
+    type: "Dashboard & Analytics",
+    link: "#",
+    color: "text-cyan-400",
+  },
+  {
+    title: "SQL (Advanced)",
+    provider: "HackerRank",
+    type: "Skill Certification",
+    link: "#",
+    color: "text-green-400",
+  },
+  {
+    title: "Google Analytics",
+    provider: "Google",
+    type: "Individual Certification",
+    link: "#",
+    color: "text-yellow-400",
+  },
 ];
 
 export default function Certificates() {
-  const [current, setCurrent] = useState(0);
-  const [itemsPerSlide, setItemsPerSlide] = useState(3);
-  const containerRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Determine slides based on screen size
-  useEffect(() => {
-    const updateSlides = () => {
-      if (window.innerWidth < 640) setItemsPerSlide(1); 
-      else if (window.innerWidth < 1024) setItemsPerSlide(2);
-      else setItemsPerSlide(3);
-    };
-
-    updateSlides();
-    window.addEventListener("resize", updateSlides);
-    return () => window.removeEventListener("resize", updateSlides);
-  }, []);
-
-  const slides = [...certificates, ...certificates];
-
-  // Auto slide
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => prev + 1);
-    }, 3000);
+      setCurrentIndex((prev) => (prev + 1) % certificates.length);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, []);
-
-  // Loop without jump
-  useEffect(() => {
-    if (current >= certificates.length) {
-      setTimeout(() => {
-        setCurrent(0);
-        if (containerRef.current) {
-          containerRef.current.style.transition = "none";
-          containerRef.current.style.transform = `translateX(0%)`;
-          void containerRef.current.offsetWidth; 
-          containerRef.current.style.transition = "transform 0.5s ease";
-        }
-      }, 500);
-    }
-  }, [current]);
-
   return (
-    <section id="certificates" className="w-full py-20 bg-black">
+    <section
+      id="certificates"
+      className="py-5 bg-[#050816] text-white"
+    >
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-white text-3xl font-bold mb-10">Certificates</h2>
 
-        <div className="overflow-hidden">
-          <div
-            ref={containerRef}
-            className="flex transition-transform duration-500"
-            style={{
-              transform: `translateX(-${(current * 100) / itemsPerSlide}%)`,
-            }}
-          >
-            {slides.map((cert, idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0 px-2 
-                w-full sm:w-1/2 lg:w-1/3"
-              >
-                <div className="bg-white rounded-xl p-4 shadow-md flex flex-col items-center">
-                  <img
-                    src={cert.image}
-                    alt={cert.name}
-                    className="w-full h-60 object-cover rounded-md mb-4"
-                  />
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {cert.name}
-                  </h3>
+        {/* ================= Heading ================= */}
+
+        <div className="text-center mb-16">
+
+          <div className="flex justify-center items-center gap-4">
+
+            <div className="w-24 h-[2px] bg-gradient-to-r from-transparent to-violet-500"></div>
+
+            <div className="relative px-7 py-2 rounded-full border border-violet-500/30 bg-violet-500/10">
+
+              <span className="uppercase tracking-[4px] text-sm text-violet-400 font-semibold">
+                Achievements
+              </span>
+
+              <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-violet-400"></div>
+
+              <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-violet-400"></div>
+
+            </div>
+
+            <div className="w-24 h-[2px] bg-gradient-to-l from-transparent to-violet-500"></div>
+
+          </div>
+
+          <h2 className="mt-8 text-5xl lg:text-6xl font-bold">
+
+            <span className="text-white">
+              Certifications &
+            </span>{" "}
+
+            <span className="bg-gradient-to-r from-violet-500 via-fuchsia-400 to-blue-500 bg-clip-text text-transparent">
+              Let's Connect
+            </span>
+
+          </h2>
+
+          <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
+            Professional certifications validating my skills along with
+            ways to connect for collaborations and opportunities.
+          </p>
+
+        </div>
+
+        {/* ================= Main Container ================= */}
+
+        <div className="rounded-3xl border border-slate-800 bg-[#0A101F] p-6">
+
+          {/* ================= Certificates ================= */}
+
+          <h3 className="flex items-center gap-3 text-2xl font-semibold mb-7">
+
+            <div className="w-11 h-11 rounded-xl bg-violet-500/20 flex items-center justify-center">
+              <Award className="text-violet-400" size={22} />
+            </div>
+
+            Certificates
+
+          </h3>
+
+          <div className="overflow-hidden">
+
+            <div
+              className="flex gap-5 transition-transform duration-700 ease-in-out"
+              style={{
+                transform: `translateX(-${currentIndex * 25}%)`,
+              }}
+            >
+
+              {[...certificates, ...certificates].map((item, index) => (
+
+                <div
+                  key={index}
+                  className="min-w-[25%] rounded-2xl border border-slate-800 bg-[#0D1425] p-5 hover:border-violet-500/40 transition duration-300"
+                >
+
+                  <div className={`text-4xl mb-4 ${item.color}`}>
+                    🏆
+                  </div>
+
+                  <h4 className="font-semibold text-lg">
+                    {item.title}
+                  </h4>
+
+                  <p className="text-violet-400 text-sm mt-1">
+                    {item.provider}
+                  </p>
+
+                  <p className="text-gray-400 text-sm mt-3 leading-6">
+                    {item.type}
+                  </p>
+
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 mt-5 text-violet-400 hover:text-violet-300"
+                  >
+                    View Credential
+                    <ExternalLink size={15} />
+                  </a>
+
                 </div>
-              </div>
-            ))}
+
+              ))}
+
+            </div>
+
           </div>
         </div>
-      </div>
-    </section>
+
+
+        {/* ================= Let's Connect ================= */}
+
+        <div className="mt-10 rounded-2xl border border-slate-800 bg-[#0D1425] px-8 py-6">
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8">
+
+            {/* Let's Connect */}
+
+            <div className="lg:col-span-4">
+              <div className="flex gap-3">
+
+                {/* Icon */}
+
+                <div className="w-12 h-12 rounded-xl bg-violet-500/15 flex items-center justify-center flex-shrink-0">
+
+                  <MessageCircle className="text-violet-400" size={22} />
+
+                </div>
+                <div className="flex flex-col justify-center">
+
+                  <h3 className="text-xl font-semibold">
+                    Let's Connect
+                  </h3>
+                  {/* Text */}
+
+                </div>
+                </div>
+                <div className="flex flex-col justify-center">
+
+                  <p className="text-gray-400 mt-3 leading-7 max-w-sm">
+                    I'm always open to discussing new opportunities and interesting
+                    projects.
+                  </p>
+
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="lg:col-span-3">
+
+                <div className="flex items-center gap-3">
+
+                  <div className="w-11 h-11 rounded-lg bg-violet-500/15 flex items-center justify-center">
+
+                    <Mail className="text-violet-400" size={20} />
+
+                  </div>
+
+                  <div>
+
+                    <p className="text-white font-medium ">
+                      Email
+                    </p>
+
+                    <a
+                      href="mailto:nidhisrivastav28@gmail.com"
+                      className="text-gray-400 text-sm hover:text-violet-400 transition"
+                    >
+                      nidhisrivastav28@gmail.com
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              {/* Location */}
+              <div className="lg:col-span-2">
+
+                <div className="flex items-center gap-2">
+
+                  <div className="w-11 h-11 rounded-lg bg-violet-500/15 flex items-center justify-center">
+
+                    <MapPin className="text-violet-400" size={20} />
+
+                  </div>
+
+                  <div>
+
+                    <p className="text-white font-medium">
+                      Location
+                    </p>
+
+                    <p className="text-gray-400 text-sm">
+                      Kolkata, India
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              {/* LinkedIn */}
+              <div className="lg:col-span-3">
+                <div className="flex items-center gap-2">
+
+                  <div className="w-11 h-11 rounded-lg bg-violet-500/15 flex items-center justify-center">
+                    <Linkedin className="text-violet-400" size={20} />
+                  </div>
+
+                  <div>
+                    <p className="text-white font-medium">
+                      LinkedIn
+                    </p>
+                    <a
+                      href="https://linkedin.com/in/nidhisrivastav28"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-gray-400 text-sm hover:text-violet-400 transition break-all"
+                    >
+                      linkedin.com/in/nidhisrivastav28
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        {/* FOOTER */}
+        <div className="max-w-7xl mx-auto px-6 mt-2">
+
+          <div className="flex justify-between items-center text-sm text-gray-500">
+
+            <p>
+              © 2026 Nidhi Srivastav. All rights reserved.
+            </p>
+
+            <p className="flex items-center gap-1">
+              Built with
+              <span className="text-red-500">❤</span>
+            </p>
+
+          </div>
+        </div>
+    </section >
   );
 }

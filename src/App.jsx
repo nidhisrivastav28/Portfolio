@@ -7,12 +7,12 @@ import './App.css'
 
 import Navbar from './components/Navbar'
 import Intro from './components/Intro'
+import Stats from './components/Stats'
 import About from './components/About'
-import Skills from './components/Skills'
+import Journey from "./components/Journey";
 import Projects from './components/Project'
-import InfoSection from './components/InfoSection'
 import Certificates from './components/Certificates'
-import Footer from './components/Footer'  
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,12 +21,13 @@ function App() {
     <>
       <Navbar />
       <Intro />
+      <Stats />
       <About />
-      <Skills />
+      <Journey />
       <Projects />
-      <InfoSection />
       <Certificates />
-      <Footer/>
+
+      <ScrollToTop />
     </>
   );
 }
