@@ -1,7 +1,6 @@
 import {
   Award,
   ExternalLink,
-  ArrowRight,
   Mail,
   MapPin,
   Linkedin,
@@ -9,35 +8,55 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
-
 const certificates = [
   {
-    title: "Google Data Analytics",
-    provider: "Google",
-    type: "Professional Certificate",
+    title: "Cloud with DevOps",
+    provider: "Indian Institute of Internship",
+    type: "Project-Based Industrial Training & Internship · Jul–Aug 2025",
     link: "#",
     color: "text-blue-400",
   },
   {
-    title: "Microsoft Power BI",
-    provider: "Microsoft",
-    type: "Dashboard & Analytics",
+    title: "Mobile & Web Technology",
+    provider: "RCCIIT",
+    type: "Industrial Training",
     link: "#",
     color: "text-cyan-400",
   },
   {
-    title: "SQL (Advanced)",
-    provider: "HackerRank",
-    type: "Skill Certification",
+    title: "Software Programmer (Python)",
+    provider: "NASSCOM",
+    type: "Professional Certification",
     link: "#",
     color: "text-green-400",
   },
   {
-    title: "Google Analytics",
-    provider: "Google",
-    type: "Individual Certification",
+    title: "Data Analytics (Low-Code/No-Code)",
+    provider: "Anudip Foundation",
+    type: "Data Analytics Training",
     link: "#",
     color: "text-yellow-400",
+  },
+  {
+    title: "Microsoft Excel",
+    provider: "Udemy",
+    type: "Beginner to Advanced with Data Analysis & AI",
+    link: "#",
+    color: "text-emerald-400",
+  },
+  {
+    title: "Programming Using Java",
+    provider: "Infosys Springboard",
+    type: "Programming Certification",
+    link: "#",
+    color: "text-orange-400",
+  },
+  {
+    title: "Affective Computing & HCI",
+    provider: "NPTEL",
+    type: "Examination · Affective Computing & Human-Computer Interaction",
+    link: "#",
+    color: "text-purple-400",
   },
 ];
 
@@ -118,23 +137,30 @@ export default function Certificates() {
           </h3>
 
           <div className="overflow-hidden">
-
             <div
               className="flex gap-5 transition-transform duration-700 ease-in-out"
               style={{
-                transform: `translateX(-${currentIndex * 25}%)`,
+                transform: `translateX(calc(${currentIndex} * -${100 / 3}% - ${currentIndex * 6.67}px))`,
               }}
             >
-
-              {[...certificates, ...certificates].map((item, index) => (
-
+              {certificates.map((item, index) => (
                 <div
-                  key={index}
-                  className="min-w-[25%] rounded-2xl border border-slate-800 bg-[#0D1425] p-5 hover:border-violet-500/40 transition duration-300"
+                  key={item.title}
+                  className="
+          flex-shrink-0
+          w-full
+          sm:w-[calc(50%-10px)]
+          lg:w-[calc(33.333%-14px)]
+          rounded-2xl
+          border border-slate-800
+          bg-[#0D1425]
+          p-5
+          hover:border-violet-500/40
+          transition duration-300
+        "
                 >
-
                   <div className={`text-4xl mb-4 ${item.color}`}>
-                    🏆
+                    <Award size={30} />
                   </div>
 
                   <h4 className="font-semibold text-lg">
@@ -149,22 +175,20 @@ export default function Certificates() {
                     {item.type}
                   </p>
 
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 mt-5 text-violet-400 hover:text-violet-300"
-                  >
-                    View Credential
-                    <ExternalLink size={15} />
-                  </a>
-
+                  {item.link !== "#" && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 mt-5 text-violet-400 hover:text-violet-300"
+                    >
+                      View Credential
+                      <ExternalLink size={15} />
+                    </a>
+                  )}
                 </div>
-
               ))}
-
             </div>
-
           </div>
         </div>
 
@@ -195,118 +219,118 @@ export default function Certificates() {
                   {/* Text */}
 
                 </div>
-                </div>
-                <div className="flex flex-col justify-center">
+              </div>
+              <div className="flex flex-col justify-center">
 
-                  <p className="text-gray-400 mt-3 leading-7 max-w-sm">
-                    I'm always open to discussing new opportunities and interesting
-                    projects.
+                <p className="text-gray-400 mt-3 leading-7 max-w-sm">
+                  I'm always open to discussing new opportunities and interesting
+                  projects.
+                </p>
+
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="lg:col-span-3">
+
+              <div className="flex items-center gap-3">
+
+                <div className="w-11 h-11 rounded-lg bg-violet-500/15 flex items-center justify-center">
+
+                  <Mail className="text-violet-400" size={20} />
+
+                </div>
+
+                <div>
+
+                  <p className="text-white font-medium ">
+                    Email
+                  </p>
+
+                  <a
+                    href="mailto:nidhisrivastav28@gmail.com"
+                    className="text-gray-400 text-sm hover:text-violet-400 transition"
+                  >
+                    nidhisrivastav28@gmail.com
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Location */}
+            <div className="lg:col-span-2">
+
+              <div className="flex items-center gap-2">
+
+                <div className="w-11 h-11 rounded-lg bg-violet-500/15 flex items-center justify-center">
+
+                  <MapPin className="text-violet-400" size={20} />
+
+                </div>
+
+                <div>
+
+                  <p className="text-white font-medium">
+                    Location
+                  </p>
+
+                  <p className="text-gray-400 text-sm">
+                    Kolkata, India
                   </p>
 
                 </div>
+
               </div>
 
-              {/* Email */}
-              <div className="lg:col-span-3">
+            </div>
 
-                <div className="flex items-center gap-3">
+            {/* LinkedIn */}
+            <div className="lg:col-span-3">
+              <div className="flex items-center gap-2">
 
-                  <div className="w-11 h-11 rounded-lg bg-violet-500/15 flex items-center justify-center">
-
-                    <Mail className="text-violet-400" size={20} />
-
-                  </div>
-
-                  <div>
-
-                    <p className="text-white font-medium ">
-                      Email
-                    </p>
-
-                    <a
-                      href="mailto:nidhisrivastav28@gmail.com"
-                      className="text-gray-400 text-sm hover:text-violet-400 transition"
-                    >
-                      nidhisrivastav28@gmail.com
-                    </a>
-
-                  </div>
-
+                <div className="w-11 h-11 rounded-lg bg-violet-500/15 flex items-center justify-center">
+                  <Linkedin className="text-violet-400" size={20} />
                 </div>
 
-              </div>
-
-              {/* Location */}
-              <div className="lg:col-span-2">
-
-                <div className="flex items-center gap-2">
-
-                  <div className="w-11 h-11 rounded-lg bg-violet-500/15 flex items-center justify-center">
-
-                    <MapPin className="text-violet-400" size={20} />
-
-                  </div>
-
-                  <div>
-
-                    <p className="text-white font-medium">
-                      Location
-                    </p>
-
-                    <p className="text-gray-400 text-sm">
-                      Kolkata, India
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              {/* LinkedIn */}
-              <div className="lg:col-span-3">
-                <div className="flex items-center gap-2">
-
-                  <div className="w-11 h-11 rounded-lg bg-violet-500/15 flex items-center justify-center">
-                    <Linkedin className="text-violet-400" size={20} />
-                  </div>
-
-                  <div>
-                    <p className="text-white font-medium">
-                      LinkedIn
-                    </p>
-                    <a
-                      href="https://linkedin.com/in/nidhisrivastav28"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-gray-400 text-sm hover:text-violet-400 transition break-all"
-                    >
-                      linkedin.com/in/nidhisrivastav28
-                    </a>
-                  </div>
+                <div>
+                  <p className="text-white font-medium">
+                    LinkedIn
+                  </p>
+                  <a
+                    href="https://linkedin.com/in/nidhisrivastav28"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-gray-400 text-sm hover:text-violet-400 transition break-all"
+                  >
+                    linkedin.com/in/nidhisrivastav28
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
 
-        {/* FOOTER */}
-        <div className="max-w-7xl mx-auto px-6 mt-2">
+      {/* FOOTER */}
+      <div className="max-w-7xl mx-auto px-6 mt-2">
 
-          <div className="flex justify-between items-center text-sm text-gray-500">
+        <div className="flex justify-between items-center text-sm text-gray-500">
 
-            <p>
-              © 2026 Nidhi Srivastav. All rights reserved.
-            </p>
+          <p>
+            © 2026 Nidhi Srivastav. All rights reserved.
+          </p>
 
-            <p className="flex items-center gap-1">
-              Built with
-              <span className="text-red-500">❤</span>
-            </p>
+          <p className="flex items-center gap-1">
+            Built with
+            <span className="text-white">🤍</span>
+          </p>
 
-          </div>
         </div>
+      </div>
     </section >
   );
 }

@@ -22,6 +22,9 @@ import hangouthub4 from "../assets/hangouthub4.png";
 import hangouthub5 from "../assets/hangouthub5.png";
 
 import patientadmission1 from "../assets/patientadmissionSystem.png";
+import facialexpression from "../assets/facial_expression.png";
+import salesdashboard from "../assets/sales_dashboard.png";
+
 
 const projects = [
   {
@@ -78,7 +81,7 @@ const projects = [
     tech: ["Python", "TensorFlow", "OpenCV", "Keras"],
     github: "",
     live: "",
-    images: [patientadmission1],
+    images: [facialexpression],
   },
 
   {
@@ -89,7 +92,7 @@ const projects = [
     tech: ["Power BI", "SQL", "Excel", "DAX"],
     github: "",
     live: "",
-    images: [patientadmission1],
+    images: [salesdashboard],
   },
 ];
 

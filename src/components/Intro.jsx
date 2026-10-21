@@ -8,7 +8,7 @@ import {
   PieChart,
 } from "lucide-react";
 
-import nidhiPic from "../assets/self.jpeg";
+import nidhiPic from "../assets/NS-self.png";
 import leetcode from "../assets/leetcode.png";
 // import cv from "../resume/NidhiSrivastav_CV.pdf";
 
@@ -47,11 +47,11 @@ export default function Intro() {
             <h2 className="mt-5 text-3xl font-semibold">
 
               <span className="text-cyan-400">
-                Data Analyst
+                Business Analyst
               </span>
 
               <span className="text-white">
-                {" "} & {" "}
+                {" "} | {" "}
               </span>
 
               <span className="text-violet-400">
@@ -63,10 +63,7 @@ export default function Intro() {
             {/* Description */}
             <p className="mt-7 max-w-lg text-lg leading-8 text-gray-400">
 
-              I analyze data to uncover insights and build
-              responsive web applications that solve real-world
-              business problems.
-
+              Business Analyst skilled in procurement workflows, requirements documentation, and functional testing. Freelance web developer building responsive, end-to-end business websites tailored to client needs.
             </p>
 
             {/* Buttons */}
@@ -78,7 +75,7 @@ export default function Intro() {
               </a>
 
               <a
-                href="/Portfolio/resume/NidhiSrivastav_CV.pdf"
+                href="/Portfolio/resume/NidhiSrivastav.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="px-8 py-4 rounded-xl border border-violet-500 text-white font-semibold hover:bg-violet-500/10 transition duration-300"
@@ -165,37 +162,39 @@ export default function Intro() {
             <div className="relative z-10">
 
               {/* Image Glow */}
-
+              {/* Image Glow */}
               <div
                 className="
-      absolute
-      inset-0
-      rounded-full
-      bg-gradient-to-r
-      from-violet-500
-      to-blue-500
-      blur-3xl
-      opacity-35
-      scale-110
-      "
+    absolute
+    inset-0
+    rounded-full
+    bg-gradient-to-r
+    from-violet-500
+    to-blue-500
+    blur-3xl
+    opacity-35
+    scale-110
+  "
               ></div>
 
               <img
                 src={nidhiPic}
-                alt="Nidhi"
+                alt="Nidhi Srivastav"
                 className="
-      relative
-      w-72
-      h-72
-      lg:w-[430px]
-      lg:h-[430px]
-      rounded-full
-      object-cover
-      object-[center_57%]
-      border-[6px]
-      border-violet-500
-      shadow-[0_0_60px_rgba(139,92,246,0.55)]
-      "
+    relative
+    w-64
+    h-64
+    sm:w-80
+    sm:h-80
+    lg:w-[430px]
+    lg:h-[430px]
+    rounded-full
+    object-cover
+    object-[center_25%]
+    border-[6px]
+    border-violet-500
+    shadow-[0_0_60px_rgba(139,92,246,0.55)]
+  "
               />
 
             </div>
