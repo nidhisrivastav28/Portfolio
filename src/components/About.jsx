@@ -21,14 +21,13 @@ const technologySkills = [
 export default function About() {
   return (
     <section
-      id="about"
       className="bg-[#050816] px-8 pb-4"
     >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-6">
 
         {/* LEFT CARD */}
 
-        <div className="bg-[#0f172a] rounded-2xl border border-slate-800 p-8">
+        <div id="about" className="bg-[#0f172a] rounded-2xl border border-slate-800 p-8">
 
           <div className="flex items-center gap-3">
 
@@ -66,7 +65,7 @@ export default function About() {
 
         {/* RIGHT CARD */}
 
-        <div className="lg:col-span-2 bg-[#0f172a] rounded-2xl border border-slate-800 p-8">
+        <div id="skills" className="lg:col-span-2 bg-[#0f172a] rounded-2xl border border-slate-800 p-8">
 
           <div className="flex items-center gap-3 mb-10">
 

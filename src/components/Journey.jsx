@@ -8,6 +8,7 @@ import {
     BriefcaseBusiness,
     Hammer,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Journey() {
     return (
@@ -97,10 +98,10 @@ export default function Journey() {
                                 <Fact
                                     icon={<TrendingUp size={18} />}
                                     title="Domain Expertise"
-                                    value="Business Analysis • Testing • Web Solutions"
+                                    value="Business & Data Analysis • Testing • Web Solutions"
                                 />
 
-                                
+
                                 <Fact
                                     icon={<Hammer size={18} />}
                                     title="Tools & Technologies"
@@ -120,7 +121,6 @@ export default function Journey() {
                         {/* ================= EXPERIENCE (60%) ================= */}
 
                         <div className="lg:col-span-3 rounded-2xl bg-[#0D1425] border border-slate-800 p-6">
-
                             <h3 className="flex items-center gap-3 text-xl font-semibold mb-8">
 
                                 <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center">
@@ -131,7 +131,15 @@ export default function Journey() {
 
                             </h3>
 
-                            <div className="relative ml-3 border-l border-violet-500/30 pl-8 space-y-8">
+                            <div className="relative ml-3 pl-8 space-y-8">
+                                {/* Animated vertical timeline line */}
+                                <motion.div
+                                    className="absolute left-0 top-0 h-full w-px bg-violet-500/50 origin-bottom"
+                                    initial={{ scaleY: 0 }}
+                                    whileInView={{ scaleY: 1 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={{ duration: 1.0, ease: "easeInOut" }}
+                                />
 
                                 <Timeline
                                     year="July 2026 - Present"
@@ -150,76 +158,86 @@ export default function Journey() {
                                 <Timeline
                                     year="2022 - 2024"
                                     title="Web Developer Internship"
-                                    company="Academic & Freelance Projects"
+                                    company="Academic Project"
                                     desc="Built responsive websites and full-stack applications using modern technologies."
                                 />
 
                             </div>
-
                         </div>
-
-                    </div>
-
-                    {/* EDUCATION */}
-
-                    <div className="mt-5 rounded-2xl bg-[#0D1425] p-5">
-
-                        <h3 className="flex items-center gap-3 text-xl font-semibold mb-8">
-
-                            <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center">
-
-                                <GraduationCap
-                                    className="text-violet-400"
-                                    size={20}
-                                />
-
-                            </div>
-
-                            Education
-
-                        </h3>
-
-                        <div className="relative">
-
-                            {/* Horizontal Line */}
-                            <div className="absolute top-2 left-0 right-0 h-[2px] bg-violet-500/20"></div>
-
-                            <div className="grid md:grid-cols-4 gap-6 relative">
-
-                                <EducationCard
-                                    year="2024 - Present"
-                                    degree="Master of Computer Applications (MCA)"
-                                    institute="RCC Institute of Information Technology"
-                                />
-
-                                <EducationCard
-                                    year="2021 - 2024"
-                                    degree="Bachelor of Computer Applications (BCA)"
-                                    institute="University of Calcutta"
-                                />
-
-                                <EducationCard
-                                    year="2018 - 2021"
-                                    degree="Higher Secondary (12th)"
-                                    institute="West Bengal Council of Higher Secondary Education"
-                                />
-
-                                <EducationCard
-                                    year="2018 - 2019"
-                                    degree="Secondary (10th)"
-                                    institute="West Bengal Board of Secondary Education"
-                                />
-
-                            </div>
-
-                        </div>
-
                     </div>
 
                 </div>
 
+                {/* EDUCATION */}
+
+                <motion.div
+                    className="mt-5 rounded-2xl bg-[#0D1425] p-5"
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
+                >
+
+                    <h3 className="flex items-center gap-3 text-xl font-semibold mb-8">
+
+                        <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center">
+
+                            <GraduationCap
+                                className="text-violet-400"
+                                size={20}
+                            />
+
+                        </div>
+
+                        Education
+
+                    </h3>
+
+                    <div className="relative">
+
+                        {/* Horizontal Line */}
+                        <motion.div
+                            className="absolute top-2 left-0 h-[2px] w-full bg-violet-500/50 origin-left"
+                            initial={{ scaleX: 0 }}
+                            whileInView={{ scaleX: 1 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 1.8, ease: "easeInOut" }}
+                        />
+
+                        <div className="grid md:grid-cols-4 gap-6 relative">
+
+                            <EducationCard
+                                year="2018 - 2019"
+                                degree="Secondary (10th)"
+                                institute="West Bengal Board of Secondary Education"
+                            />
+                            <EducationCard
+                                year="2018 - 2021"
+                                degree="Higher Secondary (12th)"
+                                institute="West Bengal Council of Higher Secondary Education"
+                            />
+
+                            <EducationCard
+                                year="2021 - 2024"
+                                degree="Bachelor of Computer Applications (BCA)"
+                                institute="University of Calcutta"
+                            />
+
+                            
+
+                            <EducationCard
+                                year="2024 - 2026"
+                                degree="Master of Computer Applications (MCA)"
+                                institute="RCC Institute of Information Technology"
+                            />
+
+                        </div>
+                    
+                    </div>
+                </motion.div>
             </div>
-        </section>
+
+        </section >
     );
 }
 

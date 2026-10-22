@@ -190,7 +190,7 @@ export default function Intro() {
     lg:h-[430px]
     rounded-full
     object-cover
-    object-[center_25%]
+    object-[center_10%]
     border-[6px]
     border-violet-500
     shadow-[0_0_60px_rgba(139,92,246,0.55)]

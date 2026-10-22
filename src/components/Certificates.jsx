@@ -201,7 +201,7 @@ export default function Certificates() {
 
             {/* Let's Connect */}
 
-            <div className="lg:col-span-4">
+            <div id="contact" className="lg:col-span-4">
               <div className="flex gap-3">
 
                 {/* Icon */}
